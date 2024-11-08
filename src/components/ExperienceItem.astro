@@ -1,0 +1,95 @@
+---
+interface Props{
+    title: string
+    badge?: string
+    badge2?: string
+    badge3?: string
+    badge4?: string
+    date: string
+    description: string
+    link?: string
+}
+const { title, badge, badge2, badge3, badge4,date, description, link } = Astro.props
+---
+
+
+    <span 
+        class="
+            absolute flex -start-3  items-center justify-center
+            size-6 rounded-full ring-8
+            bg-white ring-white/10 
+            dark:ring-gray-900 dark:bg-blue-900" 
+        > 
+        <svg  
+            xmlns="http://www.w3.org/2000/svg" 
+            width="24"  
+            height="24"  
+            viewBox="0 0 24 24"  
+            fill="none" 
+            stroke="black"  
+            stroke-width="2"  
+            stroke-linecap="round"  
+            stroke-linejoin="round"  
+            class="size-5 icon icon-tabler icons-tabler-outline icon-tabler-briefcase"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" />
+        </svg>
+    </span>
+
+<h3 class="flex items-center mb-1 text-lg font-semibold text-orange-00 dark:text-white">
+    {title}
+        
+</h3>
+<time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+    {date}
+</time>
+<p class="mb-4 text-base text-pretty font-normal text-gray-300 dark:text-gray-400">
+    {description}
+</p>
+
+<div class="mb-5 pl-2">
+{
+    badge && (
+    
+        <span class="inline-flex text-nowrap bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+            {badge}</span>
+    )
+}
+
+{
+    badge2 && (
+
+        <span class="inline-flex text-nowrap bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+            {badge2}</span>
+
+    )
+}
+
+{
+    badge3 && (
+    
+        <span class="inline-flex text-nowrap bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+            {badge3}</span>
+   
+    )
+}
+
+{
+    badge4 && (
+    
+        <span class="inline-flex text-nowrap bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+            {badge4}</span>
+    
+    )
+}
+</div>
+
+{
+    link && (
+    <a href={link}
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"><svg class="w-3.5 h-3.5 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"/>
+        <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+        </svg> Download ZIP
+    </a>
+    )
+}
+
